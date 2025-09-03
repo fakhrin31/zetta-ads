@@ -64,14 +64,22 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-background">
-      <div className="container mx-auto">
+    <section className="py-24 px-4 bg-background relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+      </div>
+      
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Pilihan Paket Digitalisasi
+          <h2 className="text-5xl md:text-6xl font-bold mb-8">
+            <span className="gradient-text">Pilihan Paket</span>
+            <br />
+            <span className="text-foreground">Digitalisasi</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Pilih paket yang paling sesuai dengan kebutuhan bisnis Anda.
+            Pilih paket yang paling sesuai dengan kebutuhan bisnis Anda. <strong className="text-primary">Semua paket include support penuh!</strong>
           </p>
         </div>
 
@@ -79,13 +87,13 @@ const PricingSection = () => {
           {pricingPlans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`relative bg-card border-border hover:shadow-elegant transition-all duration-300 ${
-                plan.isPopular ? 'ring-2 ring-primary shadow-glow' : ''
+              className={`relative bg-card-gradient border-border hover:shadow-intense transition-bounce group ${
+                plan.isPopular ? 'ring-2 ring-primary shadow-glow scale-105' : 'hover:scale-102'
               }`}
             >
               {plan.isPopular && (
-                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
-                  BEST VALUE
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent-gradient text-white font-bold animate-pulse-slow">
+                  🔥 BEST VALUE 🔥
                 </Badge>
               )}
               
@@ -113,11 +121,11 @@ const PricingSection = () => {
                 </ul>
                 
                 <Button 
-                  variant={plan.variant} 
-                  className="w-full transition-colors"
+                  variant={plan.isPopular ? "cta" : plan.variant} 
+                  className={`w-full transition-bounce ${plan.isPopular ? 'animate-pulse-slow' : ''}`}
                   size="lg"
                 >
-                  {plan.buttonText}
+                  {plan.buttonText} {plan.isPopular ? '🚀' : ''}
                 </Button>
               </CardContent>
             </Card>
