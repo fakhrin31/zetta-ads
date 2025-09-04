@@ -6,56 +6,44 @@ import { Check } from "lucide-react";
 const PricingSection = () => {
   const pricingPlans = [
     {
-      name: "Starter",
-      price: "Rp 999rb",
-      period: "/bulan",
-      description: "Perfect untuk bisnis kecil",
+      name: "Early Presence",
+      price: "IDR 2.000.000",
+      period: "",
+      description: "SMEs, Freelancers, Small Stores",
       features: [
-        "Website dasar",
-        "Optimasi SEO",
-        "Domain & hosting"
+        "1 Website Page (Landing Page)",
+        "Professional Template",
+        "WhatsApp Button"
       ],
       buttonText: "Pilih Paket",
       variant: "outline" as const,
       isPopular: false
     },
     {
-      name: "Standard",
-      price: "Rp 1.9jt", 
-      period: "/bulan",
-      description: "Solusi lengkap untuk bisnis berkembang",
+      name: "Business Growth", 
+      price: "IDR 5.000.000",
+      period: "",
+      description: "Growing businesses and established companies",
       features: [
-        "Website profesional",
-        "Analitik lanjutan",
-        "Integrasi aplikasi"
+        "Multi-page Website",
+        "SEO Optimization",
+        "Contact Forms",
+        "Social Media Integration"
       ],
       buttonText: "Pilih Paket",
       variant: "default" as const,
       isPopular: true
     },
     {
-      name: "Unggulan",
-      price: "Rp 2.9jt",
-      period: "/bulan", 
-      description: "Paket premium untuk pertumbuhan maksimal",
-      features: [
-        "Kampanye pemasaran",
-        "Manajer akun",
-        "Support 24/7"
-      ],
-      buttonText: "Pilih Paket",
-      variant: "outline" as const,
-      isPopular: false
-    },
-    {
       name: "Enterprise",
-      price: "Kustom",
+      price: "Custom Quote",
       period: "",
-      description: "Solusi khusus untuk perusahaan besar",
+      description: "Large corporations and complex projects",
       features: [
-        "Solusi enterprise",
-        "Dukungan premium",
-        "Skala besar"
+        "Custom Web Application",
+        "Database Integration",
+        "Advanced Features",
+        "Priority Support"
       ],
       buttonText: "Hubungi Kami",
       variant: "outline" as const,
@@ -73,17 +61,15 @@ const PricingSection = () => {
       
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8">
-            <span className="gradient-text">Pilihan Paket</span>
-            <br />
-            <span className="text-foreground">Digitalisasi</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            Our Service Packages
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Pilih paket yang paling sesuai dengan kebutuhan bisnis Anda. <strong className="text-primary">Semua paket include support penuh!</strong>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Choose the perfect plan to kickstart your digital journey.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <Card 
               key={index} 
@@ -121,8 +107,8 @@ const PricingSection = () => {
                 </ul>
                 
                 <Button 
-                  variant={plan.isPopular ? "cta" : plan.variant} 
-                  className={`w-full transition-bounce ${plan.isPopular ? 'animate-pulse-slow' : ''}`}
+                  className={`w-full transition-all ${plan.isPopular ? 'bg-primary hover:bg-primary/90' : ''}`}
+                  variant={plan.isPopular ? "default" : plan.variant} 
                   size="lg"
                 >
                   {plan.buttonText} {plan.isPopular ? '🚀' : ''}
