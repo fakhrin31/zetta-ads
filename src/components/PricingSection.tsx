@@ -52,7 +52,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-background relative overflow-hidden">
+    <section id="pricing" className="py-24 px-4 bg-background relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>

@@ -9,7 +9,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-hero-gradient overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center bg-hero-gradient overflow-hidden pt-20">
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-foreground">

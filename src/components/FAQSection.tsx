@@ -8,28 +8,36 @@ import {
 const FAQSection = () => {
   const faqs = [
     {
-      question: "Apa itu digitalisasi bisnis?",
-      answer: "Digitalisasi bisnis adalah proses mengintegrasikan teknologi digital untuk mengubah model bisnis tradisional. Hal ini mencakup penggunaan website, media sosial, dan alat digital lainnya untuk meningkatkan efisiensi, produktivitas, dan jangkauan pasar."
+      question: "What is Zetta?",
+      answer: "Zetta is a technology company specializing in digital transformation solutions. We help businesses leverage technology to improve efficiency, reach more customers, and stay competitive in the digital landscape."
     },
     {
-      question: "Mengapa bisnis saya perlu digitalisasi?", 
-      answer: "Di era digital saat ini, digitalisasi membantu bisnis menjangkau lebih banyak pelanggan, meningkatkan efisiensi operasional, dan tetap kompetitif di pasar. Tanpa digitalisasi, bisnis berisiko tertinggal dari kompetitor."
+      question: "What services does Zetta offer?",
+      answer: "We offer a comprehensive range of services including web development, mobile app development, data scraping, API development, digital marketing, and complete digital transformation consulting to help your business thrive online."
     },
     {
-      question: "Berapa lama proses digitalisasi?",
-      answer: "Waktu proses digitalisasi bervariasi tergantung kompleksitas kebutuhan bisnis Anda. Untuk paket Starter, biasanya 2-4 minggu. Untuk paket yang lebih kompleks, bisa memakan waktu 1-3 bulan."
+      question: "How much does it cost to work with Zetta?", 
+      answer: "Our pricing varies based on your specific needs and project scope. We offer flexible packages starting from IDR 2,000,000 for basic web presence. Contact us for a free consultation to get a customized quote."
+    },
+    {
+      question: "How long does a typical project take?",
+      answer: "Project timelines depend on complexity and scope. Simple landing pages can be completed in 3-5 business days, while more complex applications may take several weeks to months. We'll provide a detailed timeline during consultation."
+    },
+    {
+      question: "Do you provide ongoing support?",
+      answer: "Yes, we provide comprehensive post-launch support. All our packages include initial support period, and we offer extended maintenance and support plans to ensure your digital solutions continue to perform optimally."
     }
   ];
 
   return (
-    <section className="py-24 px-4 bg-secondary/30">
+    <section id="faq" className="py-24 px-4 bg-secondary/30">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Pertanyaan Umum (FAQ)
+            Frequently Asked Questions
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Temukan jawaban untuk pertanyaan yang sering diajukan tentang layanan kami.
+            Find answers to common questions about our services and how we can help transform your business digitally.
           </p>
         </div>
 

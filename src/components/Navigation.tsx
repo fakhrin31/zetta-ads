@@ -2,11 +2,12 @@ import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const menuItems = [
-    { name: "Home", href: "#" },
-    { name: "Projects", href: "#projects" },
-    { name: "Packages", href: "#packages" },
-    { name: "Blog", href: "#blog" },
-    { name: "About Us", href: "#about" }
+    { name: "Home", href: "#home" },
+    { name: "Showcase", href: "#showcase" },
+    { name: "Services", href: "#services" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "FAQ", href: "#faq" }
   ];
 
   return (
@@ -33,9 +34,9 @@ const Navigation = () => {
           ))}
         </div>
 
-        {/* Login Button */}
-        <Button variant="outline" size="sm">
-          Login
+        {/* CTA Button */}
+        <Button variant="default" size="sm">
+          Get Started
         </Button>
       </div>
     </nav>
