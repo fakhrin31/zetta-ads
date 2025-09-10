@@ -6,18 +6,18 @@ const ServicesSection = () => {
   const services = [
     {
       icon: Zap,
-      title: "Web Development",
-      description: "Kami mengembangkan website dan aplikasi web yang modern, responsif, dan user-friendly dengan teknologi terkini."
+      title: "App Development",
+      description: "Kami membangun aplikasi mobile dan web yang inovatif dengan teknologi terdepan untuk kebutuhan bisnis Anda."
     },
     {
       icon: TrendingUp,
-      title: "Digital Marketing",
-      description: "Strategi pemasaran digital yang efektif untuk meningkatkan visibility dan engagement bisnis Anda di platform online."
+      title: "Data Scraping",
+      description: "Layanan ekstraksi data otomatis dari berbagai sumber web untuk mendukung pengambilan keputusan bisnis yang tepat."
     },
     {
       icon: Shield,
-      title: "Business Consulting",
-      description: "Konsultasi bisnis digital untuk membantu transformasi dan optimalisasi proses bisnis Anda menggunakan teknologi."
+      title: "AI Integration",
+      description: "Integrasi solusi AI dan machine learning ke dalam sistem bisnis Anda untuk otomatisasi dan efisiensi yang lebih baik."
     }
   ];
 

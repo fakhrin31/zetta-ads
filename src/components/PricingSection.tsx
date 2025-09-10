@@ -15,6 +15,8 @@ const PricingSection = () => {
         "Professional Template",
         "WhatsApp Button"
       ],
+      completion: "3-5 Business days",
+      support: "7 Days Post-launch",
       buttonText: "Pilih Paket",
       variant: "outline" as const,
       isPopular: false
@@ -30,6 +32,8 @@ const PricingSection = () => {
         "Contact Forms",
         "Social Media Integration"
       ],
+      completion: "7-10 Business days",
+      support: "30 Days Post-launch",
       buttonText: "Pilih Paket",
       variant: "default" as const,
       isPopular: true
@@ -45,6 +49,8 @@ const PricingSection = () => {
         "Advanced Features",
         "Priority Support"
       ],
+      completion: "Custom Timeline",
+      support: "Ongoing Support",
       buttonText: "Hubungi Kami",
       variant: "outline" as const,
       isPopular: false
@@ -97,7 +103,7 @@ const PricingSection = () => {
               </CardHeader>
               
               <CardContent className="pt-0">
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm">
                       <Check className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
@@ -105,6 +111,17 @@ const PricingSection = () => {
                     </li>
                   ))}
                 </ul>
+                
+                <div className="space-y-2 mb-8 p-4 bg-secondary/20 rounded-lg">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Completion:</span>
+                    <span className="text-foreground font-medium">{plan.completion}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Support:</span>
+                    <span className="text-foreground font-medium">{plan.support}</span>
+                  </div>
+                </div>
                 
                 <Button 
                   className={`w-full transition-all ${plan.isPopular ? 'bg-primary hover:bg-primary/90' : ''}`}
