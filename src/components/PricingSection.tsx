@@ -17,43 +17,62 @@ const PricingSection = () => {
       ],
       completion: "3-5 Business days",
       support: "7 Days Post-launch",
-      buttonText: "Pilih Paket",
+      buttonText: "Order Now",
       variant: "outline" as const,
       isPopular: false
     },
     {
-      name: "Business Growth", 
-      price: "IDR 5.000.000",
+      name: "Smart Business",
+      price: "IDR 40.000.000",
       period: "",
-      description: "Growing businesses and established companies",
+      description: "Ready For AI Digitalization",
       features: [
-        "Multi-page Website",
-        "SEO Optimization",
-        "Contact Forms",
-        "Social Media Integration"
+        "Custom Website/App",
+        "AI Integration (ChatGPT, Gemini, Claude, etc)",
+        "Custom Domain request",
+        "3rd Party API Integration"
       ],
-      completion: "7-10 Business days",
-      support: "30 Days Post-launch",
-      buttonText: "Pilih Paket",
+      completion: "4-6 Weeks",
+      support: "2 Months",
+      buttonText: "Order Now",
+      variant: "outline" as const,
+      isPopular: false
+    },
+    {
+      name: "Growth",
+      price: "IDR 25.000.000",
+      period: "",
+      description: "SMEs in Need of Automation",
+      features: [
+        "Web App + Admin CRUD",
+        "Database Integration",
+        "Simple Automation",
+        "Custom Design & Contact Form",
+        "Maintenance"
+      ],
+      completion: "3-4 Weeks",
+      support: "1 Month",
+      buttonText: "Order Now",
+      variant: "outline" as const,
+      isPopular: false
+    },
+    {
+      name: "Starter",
+      price: "IDR 15.000.000",
+      period: "",
+      description: "Early-Stage Startups",
+      features: [
+        "Multi Page Website",
+        "Custom UI (Light)",
+        "SEO & Contact Form",
+        "WhatsApp Integration",
+        "Mini Admin Dashboard"
+      ],
+      completion: "1-2 Weeks",
+      support: "1 Month",
+      buttonText: "Order Now",
       variant: "default" as const,
       isPopular: true
-    },
-    {
-      name: "Enterprise",
-      price: "Custom Quote",
-      period: "",
-      description: "Large corporations and complex projects",
-      features: [
-        "Custom Web Application",
-        "Database Integration",
-        "Advanced Features",
-        "Priority Support"
-      ],
-      completion: "Custom Timeline",
-      support: "Ongoing Support",
-      buttonText: "Hubungi Kami",
-      variant: "outline" as const,
-      isPopular: false
     }
   ];
 
@@ -75,7 +94,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <Card 
               key={index} 
@@ -85,7 +104,7 @@ const PricingSection = () => {
             >
               {plan.isPopular && (
                 <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent-gradient text-white font-bold animate-pulse-slow">
-                  🔥 BEST VALUE 🔥
+                  POPULAR
                 </Badge>
               )}
               
