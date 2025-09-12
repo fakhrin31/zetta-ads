@@ -22,21 +22,22 @@ const PricingSection = () => {
       isPopular: false
     },
     {
-      name: "Smart Business",
-      price: "IDR 40.000.000",
+      name: "Starter",
+      price: "IDR 15.000.000",
       period: "",
-      description: "Ready For AI Digitalization",
+      description: "Early-Stage Startups",
       features: [
-        "Custom Website/App",
-        "AI Integration (ChatGPT, Gemini, Claude, etc)",
-        "Custom Domain request",
-        "3rd Party API Integration"
+        "Multi Page Website",
+        "Custom UI (Light)",
+        "SEO & Contact Form",
+        "WhatsApp Integration",
+        "Mini Admin Dashboard"
       ],
-      completion: "4-6 Weeks",
-      support: "2 Months",
+      completion: "1-2 Weeks",
+      support: "1 Month",
       buttonText: "Order Now",
-      variant: "outline" as const,
-      isPopular: false
+      variant: "default" as const,
+      isPopular: true
     },
     {
       name: "Growth",
@@ -57,22 +58,21 @@ const PricingSection = () => {
       isPopular: false
     },
     {
-      name: "Starter",
-      price: "IDR 15.000.000",
+      name: "Smart Business",
+      price: "IDR 40.000.000",
       period: "",
-      description: "Early-Stage Startups",
+      description: "Ready For AI Digitalization",
       features: [
-        "Multi Page Website",
-        "Custom UI (Light)",
-        "SEO & Contact Form",
-        "WhatsApp Integration",
-        "Mini Admin Dashboard"
+        "Custom Website/App",
+        "AI Integration (ChatGPT, Gemini, Claude, etc)",
+        "Custom Domain request",
+        "3rd Party API Integration"
       ],
-      completion: "1-2 Weeks",
-      support: "1 Month",
+      completion: "4-6 Weeks",
+      support: "2 Months",
       buttonText: "Order Now",
-      variant: "default" as const,
-      isPopular: true
+      variant: "outline" as const,
+      isPopular: false
     }
   ];
 
@@ -98,7 +98,7 @@ const PricingSection = () => {
           {pricingPlans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`relative bg-card-gradient border-border hover:shadow-intense transition-bounce group ${
+              className={`relative bg-card-gradient border-border hover:shadow-intense transition-bounce group flex flex-col h-full ${
                 plan.isPopular ? 'ring-2 ring-primary shadow-glow scale-105' : 'hover:scale-102'
               }`}
             >
@@ -109,29 +109,29 @@ const PricingSection = () => {
               )}
               
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold text-foreground mb-2">
+                <CardTitle className="text-xl font-bold text-foreground mb-2 min-h-[3rem] flex items-center justify-center">
                   {plan.name}
                 </CardTitle>
                 <div className="flex items-baseline justify-center mb-2">
-                  <span className="text-4xl font-bold text-primary">{plan.price}</span>
+                  <span className="text-3xl font-bold text-primary">{plan.price}</span>
                   <span className="text-muted-foreground ml-1">{plan.period}</span>
                 </div>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground min-h-[2.5rem] flex items-center justify-center">
                   {plan.description}
                 </p>
               </CardHeader>
               
-              <CardContent className="pt-0">
-                <ul className="space-y-3 mb-6">
+              <CardContent className="pt-0 flex flex-col flex-grow">
+                <ul className="space-y-3 mb-6 flex-grow min-h-[10rem]">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm">
-                      <Check className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
-                      <span className="text-foreground">{feature}</span>
+                    <li key={featureIndex} className="flex items-start text-sm">
+                      <Check className="h-4 w-4 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 
-                <div className="space-y-2 mb-8 p-4 bg-secondary/20 rounded-lg">
+                <div className="space-y-2 mb-6 p-4 bg-secondary/20 rounded-lg">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Completion:</span>
                     <span className="text-foreground font-medium">{plan.completion}</span>
@@ -143,7 +143,7 @@ const PricingSection = () => {
                 </div>
                 
                 <Button 
-                  className={`w-full transition-all ${plan.isPopular ? 'bg-primary hover:bg-primary/90' : ''}`}
+                  className={`w-full transition-all mt-auto ${plan.isPopular ? 'bg-primary hover:bg-primary/90' : ''}`}
                   variant={plan.isPopular ? "default" : plan.variant} 
                   size="lg"
                 >
