@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Zap, TrendingUp, Shield } from "lucide-react";
+import { createWhatsAppLink } from "@/lib/utils";
 
 const ServicesSection = () => {
   const services = [
@@ -20,6 +21,7 @@ const ServicesSection = () => {
       description: "Integrasi solusi AI dan machine learning ke dalam sistem bisnis Anda untuk otomatisasi dan efisiensi yang lebih baik."
     }
   ];
+  const contactLink = createWhatsAppLink("Halo Zettatech, saya tertarik dengan layanan yang Anda tawarkan.");
 
   return (
     <section id="services" className="py-24 px-4 bg-secondary/20">
@@ -54,9 +56,11 @@ const ServicesSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button className="bg-primary hover:bg-primary/90" size="lg">
-            Contact Us
-          </Button>
+          <a href={contactLink} target="_blank" rel="noopener noreferrer"> {/* <-- 3. Bungkus Button */}
+            <Button className="bg-primary hover:bg-primary/90" size="lg">
+              Contact Us
+            </Button>
+          </a>
         </div>
       </div>
     </section>

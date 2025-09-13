@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { createWhatsAppLink } from "@/lib/utils";
 
 const Navigation = () => {
   const menuItems = [
@@ -9,6 +10,7 @@ const Navigation = () => {
     { name: "Testimonials", href: "#testimonials" },
     { name: "FAQ", href: "#faq" }
   ];
+  const contactLink = createWhatsAppLink("Halo Zettatech, saya tertarik untuk memulai proyek.");
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -35,9 +37,11 @@ const Navigation = () => {
         </div>
 
         {/* CTA Button */}
-        <Button variant="default" size="sm">
-          Get Started
-        </Button>
+        <a href={contactLink} target="_blank" rel="noopener noreferrer"> {/* <-- 3. Bungkus Button */}
+          <Button variant="default" size="sm">
+            Get Started
+          </Button>
+        </a>
       </div>
     </nav>
   );

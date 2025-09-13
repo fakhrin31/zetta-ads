@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { createWhatsAppLink } from "@/lib/utils";
 
 const Hero = () => {
   const stats = [
@@ -7,6 +8,7 @@ const Hero = () => {
     { number: "50+", label: "Happy Clients" },
     { number: "5+", label: "Years of Support" }
   ];
+  const consultationLink = createWhatsAppLink("Halo Zettatech, saya ingin meminta jadwal untuk konsultasi gratis.");
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center bg-hero-gradient overflow-hidden pt-20">
@@ -23,9 +25,12 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button className="px-8 py-6 text-lg font-semibold bg-primary hover:bg-primary/90">
-              Get a Free Consultation
-            </Button>
+            <a href={consultationLink} target="_blank" rel="noopener noreferrer"> {/* <-- 3. Bungkus Button */}
+              <Button className="px-8 py-6 text-lg font-semibold bg-primary hover:bg-primary/90">
+                Get a Free Consultation
+              </Button>
+            </a>
+            {/* Tombol Upwork mungkin akan mengarah ke link Upwork Anda */}
             <Button variant="outline" className="px-8 py-6 text-lg font-semibold">
               Hire Our Experts on Upwork
             </Button>

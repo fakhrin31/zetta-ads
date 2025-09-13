@@ -1,7 +1,10 @@
+// src/components/PricingSection.tsx
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
+import { createWhatsAppLink } from "@/lib/utils"; // Pastikan path ini benar
 
 const PricingSection = () => {
   const pricingPlans = [
@@ -13,13 +16,13 @@ const PricingSection = () => {
       features: [
         "1 Website Page (Landing Page)",
         "Professional Template",
-        "WhatsApp Button"
+        "WhatsApp Button",
       ],
       completion: "3-5 Business days",
       support: "7 Days Post-launch",
       buttonText: "Order Now",
       variant: "outline" as const,
-      isPopular: false
+      isPopular: false,
     },
     {
       name: "Starter",
@@ -31,13 +34,13 @@ const PricingSection = () => {
         "Custom UI (Light)",
         "SEO & Contact Form",
         "WhatsApp Integration",
-        "Mini Admin Dashboard"
+        "Mini Admin Dashboard",
       ],
       completion: "1-2 Weeks",
       support: "1 Month",
       buttonText: "Order Now",
       variant: "default" as const,
-      isPopular: true
+      isPopular: true,
     },
     {
       name: "Growth",
@@ -49,13 +52,13 @@ const PricingSection = () => {
         "Database Integration",
         "Simple Automation",
         "Custom Design & Contact Form",
-        "Maintenance"
+        "Maintenance",
       ],
       completion: "3-4 Weeks",
       support: "1 Month",
       buttonText: "Order Now",
       variant: "outline" as const,
-      isPopular: false
+      isPopular: false,
     },
     {
       name: "Smart Business",
@@ -66,24 +69,30 @@ const PricingSection = () => {
         "Custom Website/App",
         "AI Integration (ChatGPT, Gemini, Claude, etc)",
         "Custom Domain request",
-        "3rd Party API Integration"
+        "3rd Party API Integration",
       ],
       completion: "4-6 Weeks",
       support: "2 Months",
       buttonText: "Order Now",
       variant: "outline" as const,
-      isPopular: false
-    }
+      isPopular: false,
+    },
   ];
 
   return (
-    <section id="pricing" className="py-24 px-4 bg-background relative overflow-hidden">
+    <section
+      id="pricing"
+      className="py-24 px-4 bg-background relative overflow-hidden"
+    >
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+        <div
+          className="absolute bottom-10 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "3s" }}
+        ></div>
       </div>
-      
+
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
@@ -95,63 +104,96 @@ const PricingSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {pricingPlans.map((plan, index) => (
-            <Card 
-              key={index} 
-              className={`relative bg-card-gradient border-border hover:shadow-intense transition-bounce group flex flex-col h-full ${
-                plan.isPopular ? 'ring-2 ring-primary shadow-glow scale-105' : 'hover:scale-102'
-              }`}
-            >
-              {plan.isPopular && (
-                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent-gradient text-white font-bold animate-pulse-slow">
-                  POPULAR
-                </Badge>
-              )}
-              
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-xl font-bold text-foreground mb-2 min-h-[3rem] flex items-center justify-center">
-                  {plan.name}
-                </CardTitle>
-                <div className="flex items-baseline justify-center mb-2">
-                  <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                  <span className="text-muted-foreground ml-1">{plan.period}</span>
-                </div>
-                <p className="text-sm text-muted-foreground min-h-[2.5rem] flex items-center justify-center">
-                  {plan.description}
-                </p>
-              </CardHeader>
-              
-              <CardContent className="pt-0 flex flex-col flex-grow">
-                <ul className="space-y-3 mb-6 flex-grow min-h-[10rem]">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-sm">
-                      <Check className="h-4 w-4 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="space-y-2 mb-6 p-4 bg-secondary/20 rounded-lg">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Completion:</span>
-                    <span className="text-foreground font-medium">{plan.completion}</span>
+          {pricingPlans.map((plan, index) => {
+            // Membuat link WhatsApp dengan pesan yang spesifik untuk setiap paket
+            const orderLink = createWhatsAppLink(
+              `Halo, saya tertarik untuk memesan paket "${plan.name}".`
+            );
+
+            return (
+              <Card
+                key={index}
+                className={`relative bg-card-gradient border-border hover:shadow-intense transition-bounce group flex flex-col h-full ${
+                  plan.isPopular
+                    ? "ring-2 ring-primary shadow-glow scale-105"
+                    : "hover:scale-102"
+                }`}
+              >
+                {plan.isPopular && (
+                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent-gradient text-white font-bold animate-pulse-slow">
+                    POPULAR
+                  </Badge>
+                )}
+
+                <CardHeader className="text-center pb-4">
+                  <CardTitle className="text-xl font-bold text-foreground mb-2 min-h-[3rem] flex items-center justify-center">
+                    {plan.name}
+                  </CardTitle>
+                  <div className="flex items-baseline justify-center mb-2">
+                    <span className="text-3xl font-bold text-primary">
+                      {plan.price}
+                    </span>
+                    <span className="text-muted-foreground ml-1">
+                      {plan.period}
+                    </span>
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Support:</span>
-                    <span className="text-foreground font-medium">{plan.support}</span>
+                  <p className="text-sm text-muted-foreground min-h-[2.5rem] flex items-center justify-center">
+                    {plan.description}
+                  </p>
+                </CardHeader>
+
+                <CardContent className="pt-0 flex flex-col flex-grow">
+                  <ul className="space-y-3 mb-6 flex-grow min-h-[10rem]">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="flex items-start text-sm"
+                      >
+                        <Check className="h-4 w-4 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground leading-relaxed">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="space-y-2 mb-6 p-4 bg-secondary/20 rounded-lg">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Completion:</span>
+                      <span className="text-foreground font-medium">
+                        {plan.completion}
+                      </span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Support:</span>
+                      <span className="text-foreground font-medium">
+                        {plan.support}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                
-                <Button 
-                  className={`w-full transition-all mt-auto ${plan.isPopular ? 'bg-primary hover:bg-primary/90' : ''}`}
-                  variant={plan.isPopular ? "default" : plan.variant} 
-                  size="lg"
-                >
-                  {plan.buttonText} {plan.isPopular ? '🚀' : ''}
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                  
+                  {/* Tombol dibungkus dengan tag <a> untuk mengarahkan ke WhatsApp */}
+                  <a
+                    href={orderLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto"
+                  >
+                    <Button
+                      className={`w-full transition-all ${
+                        plan.isPopular ? "bg-primary hover:bg-primary/90" : ""
+                      }`}
+                      variant={plan.isPopular ? "default" : plan.variant}
+                      size="lg"
+                    >
+                      {plan.buttonText} {plan.isPopular ? "🚀" : ""}
+                    </Button>
+                  </a>
+
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
