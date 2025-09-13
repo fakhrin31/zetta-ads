@@ -8,24 +8,44 @@ import {
 const FAQSection = () => {
   const faqs = [
     {
-      question: "What is Zetta?",
-      answer: "Zetta is a technology company specializing in digital transformation solutions. We help businesses leverage technology to improve efficiency, reach more customers, and stay competitive in the digital landscape."
+      question: "Apa saja layanan yang ditawarkan Zetta?",
+      answer: "Zetta menawarkan berbagai layanan teknologi termasuk pengembangan website, aplikasi mobile, UI/UX design, digital marketing, SEO optimization, cloud solutions, dan dukungan teknis 24/7."
     },
     {
-      question: "What services does Zetta offer?",
-      answer: "We offer a comprehensive range of services including web development, mobile app development, data scraping, API development, digital marketing, and complete digital transformation consulting to help your business thrive online."
+      question: "Berapa lama waktu pengerjaan proyek website?",
+      answer: "Waktu pengerjaan bervariasi tergantung kompleksitas proyek. Website sederhana 1-2 minggu, website kompleks 1-3 bulan. Tim kami akan memberikan estimasi waktu yang akurat setelah analisis kebutuhan."
     },
     {
-      question: "How much does it cost to work with Zetta?", 
-      answer: "Our pricing varies based on your specific needs and project scope. We offer flexible packages starting from IDR 2,000,000 for basic web presence. Contact us for a free consultation to get a customized quote."
+      question: "Bagaimana proses pembayaran untuk proyek?", 
+      answer: "Pembayaran dilakukan dalam beberapa tahap: 50% di awal, 30% saat progress 70%, dan 20% setelah proyek selesai. Kami menerima transfer bank dan pembayaran online."
     },
     {
-      question: "How long does a typical project take?",
-      answer: "Project timelines depend on complexity and scope. Simple landing pages can be completed in 3-5 business days, while more complex applications may take several weeks to months. We'll provide a detailed timeline during consultation."
+      question: "Apakah ada garansi untuk website yang dibuat?",
+      answer: "Ya, kami memberikan garansi 3 bulan untuk bug dan error. Setelah itu, kami tetap memberikan dukungan teknis dengan biaya maintenance bulanan yang terjangkau."
     },
     {
-      question: "Do you provide ongoing support?",
-      answer: "Yes, we provide comprehensive post-launch support. All our packages include initial support period, and we offer extended maintenance and support plans to ensure your digital solutions continue to perform optimally."
+      question: "Bisakah website diintegrasikan dengan sistem yang sudah ada?",
+      answer: "Tentu! Tim kami memiliki pengalaman dalam integrasi berbagai sistem seperti CRM, ERP, payment gateway, dan API pihak ketiga. Kami akan menganalisis kebutuhan integrasi Anda."
+    },
+    {
+      question: "Apakah website yang dibuat responsive untuk mobile?",
+      answer: "Ya, semua website yang kami buat menggunakan desain responsive yang akan terlihat sempurna di desktop, tablet, dan smartphone."
+    },
+    {
+      question: "Bagaimana jika ada perubahan desain di tengah proyek?",
+      answer: "Perubahan minor tidak dikenakan biaya tambahan. Untuk perubahan besar, akan ada biaya tambahan yang disepakati bersama. Kami selalu berkomunikasi dengan klien untuk memastikan kepuasan."
+    },
+    {
+      question: "Apakah ada layanan maintenance setelah website selesai?",
+      answer: "Ya, kami menawarkan paket maintenance bulanan yang mencakup update keamanan, backup data, monitoring performa, dan dukungan teknis 24/7."
+    },
+    {
+      question: "Bisakah website dioptimasi untuk SEO?",
+      answer: "Tentu! Kami menerapkan best practices SEO dalam setiap website yang dibuat, termasuk optimasi meta tags, struktur URL, kecepatan loading, dan mobile-friendly design."
+    },
+    {
+      question: "Apakah ada demo atau portfolio yang bisa dilihat?",
+      answer: "Ya, Anda bisa melihat portfolio kami di halaman showcase. Kami juga bisa memberikan demo website yang sudah kami buat untuk referensi."
     }
   ];
 
